@@ -1,0 +1,31 @@
+<nav class="border-gray-200 bg-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://www.idrd.gov.co/" class="flex items-center space-x-3 rtl:space-x-reverse" referrerpolicy="no-referrer" target="_blank">
+        <img src="https://www.idrd.gov.co/sites/default/files/inline-images/escudo-bogota.png" class="h-8 pr-3 border-r-2" alt="Logo IDRD" />
+        <img src="https://www.idrd.gov.co/sites/default/files/inline-images/logo-idrd.png" class="h-8 pr-3 border-r-2" alt="Logo IDRD" />
+        <img src="https://www.idrd.gov.co/sites/default/files/inline-images/logo-bogota.png" class="h-8 pr-3 border-r-2" alt="Logo IDRD" />
+        <span class="self-center text-1xl font-semibold whitespace-nowrap text-white">Instituto Distrital de Recreación y Deporte (<span class="text-sm text-red-500">Manejo de proyectos</span>) </span>
+    </a>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+        <li>
+          <a
+            routerLink="/proyectos"
+            [ngClass]="{'text-blue-700 font-bold block rounded-sm' : activeRoute === '/proyectos', ' text-white hover:text-blue-700' : activeRoute !== '/proyectos'}"
+            aria-current="page"
+          >
+            Proyectos
+          </a>
+          </li>
+          <li>
+            <a
+              routerLink="/materiales"
+              [ngClass]="{'text-blue-700 font-bold block rounded-sm' : activeRoute === '/materiales', 'text-white hover:text-blue-700' : activeRoute !== '/materiales'}"
+            >
+              Materiales
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

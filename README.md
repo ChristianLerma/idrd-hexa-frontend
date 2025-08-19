@@ -1,59 +1,50 @@
-# AppProyectos
+# AppProyectos - Arquitectura Hexagonal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Este proyecto implementa una arquitectura hexagonal (Ports and Adapters) en Angular 20.
 
-## Development server
+## Estructura del Proyecto
 
-To start a local development server, run:
+### ?? Core Layer
+- **Domain**: Entidades, Value Objects, Interfaces de repositorios y servicios
+- **Application**: Casos de uso y DTOs
 
-```bash
+### ?? Infrastructure Layer
+- **Primary Adapters**: Controllers REST, Resolvers GraphQL, Componentes Web
+- **Secondary Adapters**: Implementaciones de repositorios, APIs externas
+
+### ?? Presentation Layer
+- Componentes de UI, Páginas, Layouts y servicios de estado
+
+### ?? Shared Layer
+- Utilidades, constantes, tipos y guards compartidos
+
+## Comandos de Desarrollo
+
+\\\ash
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Ejecutar tests
 ng test
-```
 
-## Running end-to-end tests
+# Build para producción
+ng build
+\\\
 
-For end-to-end (e2e) testing, run:
+## Principios Aplicados
 
-```bash
-ng e2e
-```
+- **Inversión de Dependencias**: Las capas internas no dependen de las externas
+- **Separación de Responsabilidades**: Cada capa tiene un propósito específico
+- **Testabilidad**: Fácil testing mediante inyección de dependencias
+- **Mantenibilidad**: Código organizado y escalable
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Próximos Pasos
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Implementar entidades del dominio
+2. Crear casos de uso
+3. Implementar adaptadores
+4. Configurar inyección de dependencias
+5. Desarrollar componentes de UI
