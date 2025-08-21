@@ -13,7 +13,25 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@core/*": ["app/core/*"],
+      "@application/*": ["app/core/application/*"],
+      "@dto/*": ["app/core/application/dto/*"],
+      "@domain/*": ["app/core/domain/*"],
+      "@infrastructure/*": ["app/infrastructure/*"],
+      "@entities-infrastructure/*": ["app/infrastructure/adapters/secondary/database/entities/*"],
+      "@adapters/*": ["app/infrastructure/adapters/*"],
+      "@configuration/*": ["app/infrastructure/configuration/*"],
+      "@presentation/*": ["app/presentation/*"],
+      "@components/*": ["app/presentation/components/*"],
+      "@layouts/*": ["app/presentation/layouts/*"],
+      "@pages/*": ["app/presentation/pages/*"],
+      "@services/*": ["app/presentation/services/*"],
+      "@shared/*": ["app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
