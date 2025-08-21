@@ -1,5 +1,5 @@
-import { Material } from '../../../../../core/domain/entities/material.entity';
-import { MaterialEntityDB, CreateMaterialEntityDB, UpdateMaterialEntityDB } from '../entities/material.entity.db';
+import { Material } from '@domain/entities/material.entity';
+import { MaterialEntityDB, CreateMaterialEntityDB, UpdateMaterialEntityDB } from '@entities-infrastructure/material.entity.db';
 
 /**
  * Mapper para convertir entre entidades del dominio y entidades de base de datos
@@ -16,9 +16,9 @@ export class MaterialMapper {
       descripcion: domainMaterial.descripcion,
       unidad: domainMaterial.unidad,
       precio: domainMaterial.precio,
-      createdAt: domainMaterial.createdAt.toISOString(),
-      updatedAt: domainMaterial.updatedAt?.toISOString(),
-      deletedAt: domainMaterial.deletedAt?.toISOString() || null
+      createdAt: domainMaterial.createdAt,
+      updatedAt: domainMaterial.updatedAt,
+      deletedAt: domainMaterial.deletedAt || null
     };
   }
 
@@ -61,7 +61,7 @@ export class MaterialMapper {
       descripcion: domainMaterial.descripcion,
       unidad: domainMaterial.unidad,
       precio: domainMaterial.precio,
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date()
     };
   }
 

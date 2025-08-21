@@ -42,13 +42,12 @@ export class Material {
       datos.descripcion.trim(),
       datos.unidad.trim(),
       datos.precio,
-      new Date(), // createdAt
-      new Date(), // updatedAt
-      null // deletedAt
+      new Date(),
+      new Date(),
+      null
     );
   }
 
-  // Factory method para actualizar un material existente
   static actualizar(materialExistente: Material, cambios: Partial<{
     codigo: string;
     descripcion: string;
@@ -73,7 +72,6 @@ export class Material {
     return 'MAT_' + Date.now().toString() + '_' + Math.random().toString(36).substring(2, 9);
   }
 
-  // Método para convertir a objeto plano (útil para persistencia)
   toPlainObject() {
     return {
       id: this.id,

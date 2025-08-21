@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Material } from '../../../domain/entities/material.entity';
-import { MaterialRepository } from '../../../domain/repositories/material.repository';
-import { MaterialFilterDto, MaterialResponseDto } from '../../dto/material';
+import { Material } from '@domain/entities/material.entity';
+import { MaterialRepository } from '@domain/repositories/material.repository';
+import { MaterialFilterDto, MaterialResponseDto } from '@dto/material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetMaterialsUseCase {
-  constructor(private materialRepository: MaterialRepository) {}
+  constructor(private readonly materialRepository: MaterialRepository) {}
 
   execute(filtros?: MaterialFilterDto): Observable<MaterialResponseDto[]> {
     return this.materialRepository.findAll(filtros).pipe(

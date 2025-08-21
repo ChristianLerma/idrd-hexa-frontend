@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { Material } from '../../../domain/entities/material.entity';
-import { MaterialRepository } from '../../../domain/repositories/material.repository';
-import { UpdateMaterialDto, MaterialResponseDto } from '../../dto/material';
+import { Material } from '@domain/entities/material.entity';
+import { MaterialRepository } from '@domain/repositories/material.repository';
+import { UpdateMaterialDto, MaterialResponseDto } from '@dto/material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateMaterialUseCase {
-  constructor(private materialRepository: MaterialRepository) {}
+  constructor(private readonly materialRepository: MaterialRepository) {}
 
   execute(updateMaterialDto: UpdateMaterialDto): Observable<MaterialResponseDto> {
     return this.materialRepository.findById(updateMaterialDto.id).pipe(

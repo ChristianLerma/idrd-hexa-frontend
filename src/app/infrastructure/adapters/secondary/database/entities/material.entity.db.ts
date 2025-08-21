@@ -4,9 +4,9 @@ export interface MaterialEntityDB {
   descripcion: string;
   unidad: string;
   precio: number;
-  createdAt: string;
-  updatedAt?: string;
-  deletedAt?: string | null;
+  createdAt: Date;
+  updatedAt?: Date;
+  deletedAt?: Date | null;
 }
 
 export type CreateMaterialEntityDB = Omit<MaterialEntityDB, 'id' | 'createdAt' | 'updatedAt'> & {
@@ -15,5 +15,5 @@ export type CreateMaterialEntityDB = Omit<MaterialEntityDB, 'id' | 'createdAt' |
 
 export type UpdateMaterialEntityDB = Partial<Omit<MaterialEntityDB, 'id' | 'updatedAt'>> & {
   id: string;
-  updatedAt: string;
+  updatedAt: Date;
 };

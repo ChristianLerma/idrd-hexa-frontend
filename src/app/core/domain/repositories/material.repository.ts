@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { Material } from '../entities/material.entity';
-import { MaterialFilterDto } from '../../application/dto/material';
+import { Material } from '@domain/entities/material.entity';
+import { MaterialFilterDto } from '@dto/material';
 
 export abstract class MaterialRepository {
   abstract findAll(filtros?: MaterialFilterDto): Observable<Material[]>;

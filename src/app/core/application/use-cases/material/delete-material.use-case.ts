@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { MaterialRepository } from '../../../domain/repositories/material.repository';
-import { Material } from '../../../domain/entities/material.entity';
+import { MaterialRepository } from '@domain/repositories/material.repository';
+import { Material } from '@domain/entities/material.entity';
 
 export interface DeleteMaterialResult {
   success: boolean;
@@ -15,7 +15,7 @@ export interface DeleteMaterialResult {
   providedIn: 'root'
 })
 export class DeleteMaterialUseCase {
-  constructor(private materialRepository: MaterialRepository) {}
+  constructor(private readonly materialRepository: MaterialRepository) {}
 
   execute(id: string): Observable<DeleteMaterialResult> {
     return this.materialRepository.findById(id).pipe(

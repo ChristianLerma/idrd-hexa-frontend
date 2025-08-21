@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-import { MaterialRepository } from '../../../../core/domain/repositories/material.repository';
-import { Material } from '../../../../core/domain/entities/material.entity';
-import { MaterialFilterDto } from '../../../../core/application/dto/material';
+import { MaterialRepository } from '@core/domain/repositories/material.repository';
+import { Material } from '@core/domain/entities/material.entity';
+import { MaterialFilterDto } from '@core/application/dto/material';
 import { MaterialMapper } from '../database/mappers/material.mapper';
 import { MaterialEntityDB } from '../database/entities/material.entity.db';
 
@@ -26,8 +26,9 @@ export class MaterialRepositoryImpl extends MaterialRepository {
       descripcion: 'Cemento de alta calidad para construcción',
       unidad: 'Kg',
       precio: 15.50,
-      updatedAt: new Date('2024-01-15').toISOString(),
-      createdAt: new Date('2024-01-15').toISOString()
+      updatedAt: new Date('2024-01-15'),
+      createdAt: new Date('2024-01-15'),
+      deletedAt: null
     },
     {
       id: 'MAT_002',
@@ -35,8 +36,9 @@ export class MaterialRepositoryImpl extends MaterialRepository {
       descripcion: 'Varilla corrugada para refuerzo estructural',
       unidad: 'm',
       precio: 8.75,
-      updatedAt: new Date('2024-01-15').toISOString(),
-      createdAt: new Date('2024-01-15').toISOString()
+      updatedAt: new Date('2024-01-15'),
+      createdAt: new Date('2024-01-15'),
+      deletedAt: null
     },
     {
       id: 'MAT_003',
@@ -44,8 +46,39 @@ export class MaterialRepositoryImpl extends MaterialRepository {
       descripcion: 'Pintura interior de alta cobertura',
       unidad: 'L',
       precio: 25.90,
-      updatedAt: new Date('2024-01-15').toISOString(),
-      createdAt: new Date('2024-01-15').toISOString()
+      updatedAt: new Date('2024-01-15'),
+      createdAt: new Date('2024-01-15'),
+      deletedAt: null
+    },
+    {
+      id: 'MAT_004',
+      codigo: 'COD_04',
+      descripcion: 'Madera de pino cepillada 2x4',
+      unidad: 'pie',
+      precio: 3.20,
+      updatedAt: new Date('2024-01-16'),
+      createdAt: new Date('2024-01-16'),
+      deletedAt: null
+    },
+    {
+      id: 'MAT_005',
+      codigo: 'COD_05',
+      descripcion: 'Ladrillo rojo cocido',
+      unidad: 'unidad',
+      precio: 0.75,
+      updatedAt: new Date('2024-01-16'),
+      createdAt: new Date('2024-01-16'),
+      deletedAt: null
+    },
+    {
+      id: 'MAT_006',
+      codigo: 'COD_06',
+      descripcion: 'Tubería PVC sanitaria 4 pulgadas',
+      unidad: 'm',
+      precio: 12.00,
+      updatedAt: new Date('2024-01-17'),
+      createdAt: new Date('2024-01-17'),
+      deletedAt: null
     }
   ];
 
@@ -55,7 +88,7 @@ export class MaterialRepositoryImpl extends MaterialRepository {
     if (filtros) {
       if (filtros.codigo) {
         materialesFiltrados = materialesFiltrados.filter(
-          m => m.codigo.toLowerCase().includes(filtros.codigo!.toLowerCase())
+          m => m.codigo.toLowerCase().includes(filtros.codigo!.toLowerCase()) && m.deletedAt === null
         );
       }
     }
