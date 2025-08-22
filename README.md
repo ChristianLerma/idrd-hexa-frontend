@@ -1,4 +1,4 @@
-# AppProyectos - Arquitectura Hexagonal
+# Arquitectura Hexagonal
 
 ## 1. Descripción del Proyecto
 
