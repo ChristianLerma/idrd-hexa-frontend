@@ -37,11 +37,7 @@ export function createMaterialRepositoryProvider(useHttp: boolean = false): Prov
   };
 }
 
-/**
- * Todos los providers de infraestructura
- */
 export const INFRASTRUCTURE_PROVIDERS: Provider[] = [
   MATERIAL_REPOSITORY_PROVIDER,
-  // Aquí se agregarían otros repositorios cuando los creemos
-  // PROJECT_REPOSITORY_PROVIDER,
 ];
+

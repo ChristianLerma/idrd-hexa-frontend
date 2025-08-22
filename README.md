@@ -115,20 +115,20 @@ Los siguientes scripts están disponibles en `package.json`:
 
 Las dependencias clave del proyecto incluyen:
 
--   `@angular/animations`
--   `@angular/common`
--   `@angular/compiler`
--   `@angular/core`
--   `@angular/forms`
--   `@angular/platform-browser`
--   `@angular/router`
--   `@tailwindcss/postcss`
--   `ngx-toastr`
--   `postcss`
--   `rxjs`
--   `tailwindcss`
--   `tslib`
--   `zone.js`
+-   **`@angular/animations`**: Proporciona la funcionalidad para crear y controlar animaciones complejas en la aplicación Angular, mejorando la experiencia de usuario.
+-   **`@angular/common`**: Contiene los bloques de construcción comunes de Angular, como directivas (`ngIf`, `ngFor`), pipes (`DatePipe`, `CurrencyPipe`) y servicios para internacionalización y comunicación HTTP.
+-   **`@angular/compiler`**: Es el compilador de Angular que transforma las plantillas y los decoradores en código JavaScript ejecutable por el navegador. Se usa principalmente en tiempo de compilación.
+-   **`@angular/core`**: El corazón de Angular. Contiene las funcionalidades fundamentales como el sistema de inyección de dependencias, los decoradores (`@Component`, `@Injectable`), y el ciclo de vida de los componentes.
+-   **`@angular/forms`**: Proporciona APIs para construir formularios reactivos y basados en plantillas, incluyendo validación y manejo de datos.
+-   **`@angular/platform-browser`**: Contiene las herramientas necesarias para ejecutar aplicaciones Angular en un navegador web, incluyendo la manipulación del DOM y la gestión de eventos.
+-   **`@angular/router`**: El módulo de enrutamiento de Angular, que permite navegar entre diferentes vistas de la aplicación sin recargar la página completa.
+-   **`@tailwindcss/postcss`**: Un plugin de PostCSS que permite integrar Tailwind CSS en el proceso de construcción de CSS.
+-   **`ngx-toastr`**: Una librería de terceros para mostrar notificaciones "toast" (mensajes emergentes) en la interfaz de usuario.
+-   **`postcss`**: Una herramienta para transformar estilos CSS con plugins JavaScript. Tailwind CSS, por ejemplo, utiliza PostCSS.
+-   **`rxjs`**: Una librería para programación reactiva que utiliza Observables, facilitando el manejo de eventos asíncronos y flujos de datos. Angular hace un uso extensivo de RxJS.
+-   **`tailwindcss`**: Un framework CSS de utilidad que proporciona clases de bajo nivel para construir diseños directamente en el marcado HTML.
+-   **`tslib`**: Una pequeña librería de ayuda de tiempo de ejecución para TypeScript, que contiene funciones auxiliares generadas por el compilador de TypeScript.
+-   **`zone.js`**: Una librería que proporciona un contexto de ejecución (zona) para operaciones asíncronas, lo que permite a Angular detectar cambios y actualizar la vista de manera eficiente.
 
 ## 7. Licencia
 
