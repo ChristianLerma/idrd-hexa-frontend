@@ -1,4 +1,4 @@
-# Arquitectura Hexagonal
+# Arquitectura Hexagonal - ![Angular](https://img.shields.io/badge/-Angular-DD0031?style=flat&logo=angular&logoColor=white) **Angular 20**
 
 ## 1. Descripción del Proyecto
 
